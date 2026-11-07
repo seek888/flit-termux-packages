@@ -1,6 +1,6 @@
 # Flit runtime distribution
 
-Package compilation uses the official source builder for `cc.lycstar.flit` and
+Package compilation uses the official source builder for `com.seek888.flit` and
 Android aarch64. Source downloads retain checksum-verified mirror fallbacks.
 `publish-packages.sh` merges existing Release assets with new packages and updates
 the flat APT metadata after publishing the package files.

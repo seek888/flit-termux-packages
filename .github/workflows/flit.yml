@@ -30,7 +30,7 @@ jobs:
         run: |
           bash -n scripts/build/termux_download.sh scripts/build/termux_source_mirrors.sh scripts/build-bootstraps.sh
           python3 -m unittest discover -s scripts/tests -p 'test_flit_*.py' -v
-          bash -c '. scripts/properties.sh; test "$TERMUX_APP__PACKAGE_NAME" = cc.lycstar.flit; test "$TERMUX__PREFIX" = /data/data/cc.lycstar.flit/files/usr; test "$TERMUX_REPO_APP__PACKAGE_NAME" = com.termux'
+          bash -c '. scripts/properties.sh; test "$TERMUX_APP__PACKAGE_NAME" = com.seek888.flit; test "$TERMUX__PREFIX" = /data/data/com.seek888.flit/files/usr; test "$TERMUX_REPO_APP__PACKAGE_NAME" = com.termux'
       - name: Build hello and dependencies from source (aarch64)
         run: ./scripts/run-docker.sh ./build-package.sh -a aarch64 hello
       - name: Verify package prefix
@@ -38,7 +38,7 @@ jobs:
           test -n "$(find output -maxdepth 1 -name 'hello_*_aarch64.deb' -print -quit)"
           mkdir -p "$RUNNER_TEMP/hello"
           find output -maxdepth 1 -name 'hello_*_aarch64.deb' -exec dpkg-deb -x '{}' "$RUNNER_TEMP/hello" \;
-          test -f "$RUNNER_TEMP/hello/data/data/cc.lycstar.flit/files/usr/bin/hello"
+          test -f "$RUNNER_TEMP/hello/data/data/com.seek888.flit/files/usr/bin/hello"
       - uses: actions/upload-artifact@v4
         with:
           name: flit-hello-aarch64
@@ -126,4 +126,4 @@ jobs:
           tag="bootstrap-flit-aarch64-${GITHUB_RUN_ID}"
           gh release create "$tag" output/bootstrap-aarch64.zip output/SHA256SUMS \
             --target "$GITHUB_SHA" --title "Flit bootstrap (aarch64)" \
-            --notes 'Android aarch64 bootstrap built from source for cc.lycstar.flit.'
+            --notes 'Android aarch64 bootstrap built from source for com.seek888.flit.'

@@ -14,7 +14,7 @@ if gh release view pool --repo "$GH_REPO" >/dev/null 2>&1; then
 	gh release download pool --repo "$GH_REPO" --pattern '*.deb' --dir "$work"
 else
 	gh release create pool --repo "$GH_REPO" --target "$GITHUB_SHA" \
-		--title 'Flit APT packages (aarch64)' --notes 'Rolling package repository for cc.lycstar.flit.'
+		--title 'Flit APT packages (aarch64)' --notes 'Rolling package repository for com.seek888.flit.'
 fi
 find "$new_packages" -type f -name '*.deb' -exec cp {} "$work/" \;
 for file in "$work"/*.deb; do

@@ -4,8 +4,8 @@ This repository contains an upstream Termux packages source snapshot adapted for
 
 - Upstream: https://github.com/termux/termux-packages
 - Source revision: `4e81bc83267eb71e4c5c2c1c9d9a1be88ffabb71`
-- Android application ID and namespace: `cc.lycstar.flit`
-- Installation prefix: `/data/data/cc.lycstar.flit/files/usr`
+- Android application ID and namespace: `com.seek888.flit`
+- Installation prefix: `/data/data/com.seek888.flit/files/usr`
 - Target architecture: `aarch64`
 
 ## Build
@@ -22,7 +22,7 @@ Source download fallbacks retain the upstream downloader and only accept archive
 
 - Development packages and flat APT metadata are published to the rolling `pool` Release.
 - Bootstrap archives are published under `bootstrap-flit-aarch64-<run-id>`.
-- APT source: `deb [trusted=yes] https://github.com/lycstar/flit-termux-packages/releases/download/pool ./`
+- APT source: `deb [trusted=yes] https://github.com/seek888/flit-termux-packages/releases/download/pool ./`
 
 The APT repository uses HTTPS and explicitly trusts this distributor; it is not a signed upstream repository. The application must configure this source before installing packages. Do not install official Termux binary packages into Flit or reuse artifacts compiled for a different application prefix.
 
